@@ -108,10 +108,10 @@ def main():
         module.fail_json(msg="region must be specified")
 
     subnet_ids = []
-    tag_filters = {
-      'tag:' + tag: value
-      for tag, value in tags.iteritems()
-    }
+    tag_filters = dict(
+      ('tag:' + tag, value)
+      for (tag, value) in tags.iteritems()
+    )
 
     for subnet in vpc_conn.get_all_subnets(filters=tag_filters):
       subnet_ids.append(subnet.id)

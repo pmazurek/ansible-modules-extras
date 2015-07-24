@@ -15,7 +15,7 @@
 
 DOCUMENTATION = '''
 ---
-module: ec2_eni
+module: ec2_subnet_lookup
 short_description: Get the subnets ID's by tags.
 description:
     - This module allows you to query for subnet ID's using tags. It is useful if you have to manage complex subnet structure and use modules that rely on subnet ID's given as comma separated values.
